@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useRef, useState } from "react";
-=======
-import React, { useRef, useState, useEffect } from "react";
->>>>>>> c57c5d27929ad29bb19691e28893714773867d53
 
 function App() {
   // State to hold the elapsed time in milliseconds
@@ -20,15 +16,9 @@ function App() {
   const timerRef = useRef(null);
 
   // Calculating minutes, seconds, and milliseconds from the elapsed time
-<<<<<<< HEAD
   const sec = Math.floor((time / 1000) % 60); // Convert total time to seconds and using "% 60", the seconds will always loop back to 0 when they reach 60, ensuring that the displayed seconds are always in the range from 0 to 59.
   const min = Math.floor((time / 60000) % 60); // Convert total time to minutes
   const hr = Math.floor(time / 3600000); // Convert total time to hours
-=======
-  const ms = Math.floor((time % 1000) / 10); // Convert milliseconds to tenths of a second
-  const sec = Math.floor((time / 1000) % 60); // Convert total time to seconds and using "% 60", the seconds will always loop back to 0 when they reach 60, ensuring that the displayed seconds are always in the range from 0 to 59.
-  const min = Math.floor((time / 60000) % 60); // Convert total time to minutes
->>>>>>> c57c5d27929ad29bb19691e28893714773867d53
 
   // Function to start the timer
   const startTimer = () => {
@@ -72,28 +62,17 @@ function App() {
   };
 
   // Tailwind CSS classes for the buttons based on the current theme
-<<<<<<< HEAD
   const buttonClasses = `start px-8 py-4 rounded-full transition-all duration-300 active:scale-110 font-extralight ${
     dark
       ? "bg-zinc-800 text-white lg:hover:bg-zinc-700"
       : "bg-zinc-200 text-black lg:hover:bg-zinc-300"
-=======
-  const buttonClasses = `start px-8 py-4 rounded-full ${
-    dark
-      ? "bg-zinc-800 text-white  active:bg-zinc-900"
-      : "bg-zinc-200 text-black active:bg-zinc-300"
->>>>>>> c57c5d27929ad29bb19691e28893714773867d53
   }`;
 
   return (
     <div
       className={`min-h-screen w-full flex items-center flex-col ${
         dark ? "bg-black text-white" : "bg-white text-black"
-<<<<<<< HEAD
       } transition-all duration-300 justify-center`}
-=======
-      } transition-colors justify-center`}
->>>>>>> c57c5d27929ad29bb19691e28893714773867d53
     >
       <div className="flex text-[20px] gap-1 font-bold ">
         <span className="text-zinc-600">ST</span>
@@ -131,7 +110,6 @@ function App() {
       </div>
 
       {/* Displaying the timer */}
-<<<<<<< HEAD
       <div
         className="flex justify-center sm:text-9xl text-[15vw] lg:font-bold font-semibold"
         style={{
@@ -153,16 +131,6 @@ function App() {
 
       {/* Buttons for controlling the timer */}
       <div className="btn flex sm:text-5xl text-[5vw] sm:gap-12 gap-2 lg:mt-12 mt-6 sm:font-semibold">
-=======
-      <div className="flex justify-center sm:text-9xl text-[15vw] sm:font-bold font-semibold">
-        <span>{min < 10 ? "0" + min : min}:</span>
-        <span>{sec < 10 ? "0" + sec : sec}:</span>
-        <span>{ms < 10 ? "0" + ms : ms}</span>
-      </div>
-
-      {/* Buttons for controlling the timer */}
-      <div className="btn flex sm:text-5xl text-[5vw] sm:gap-12 gap-2 mt-12 sm:font-semibold ">
->>>>>>> c57c5d27929ad29bb19691e28893714773867d53
         <button
           className={buttonClasses}
           onClick={startTimer}
